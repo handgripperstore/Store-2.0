@@ -1,72 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pay with UPI</title>
+  <title>Sumith E-com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo.jpg">
+
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    }
+
+    .main-header {
+      background: white;
+      padding: 18px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .logo {
+      height: 45px;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #111827;
+    }
+
+    .wrapper {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 80px 20px;
     }
 
     .card {
       background: white;
-      padding: 40px;
-      border-radius: 16px;
-      width: 350px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      width: 380px;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.08);
       text-align: center;
     }
 
-    .slider {
-      margin-top: 30px;
-      background: #ede9fe;
-      border-radius: 50px;
-      padding: 6px;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .slider-text {
-      text-align: center;
+    .amount {
+      font-size: 22px;
       font-weight: 600;
-      color: #6d28d9;
-      padding: 10px 0;
+      margin: 20px 0;
     }
 
-    .thumb {
-      width: 50px;
-      height: 50px;
+    .slider-btn {
+      margin-top: 30px;
+      padding: 15px;
+      border-radius: 50px;
       background: linear-gradient(135deg, #6d28d9, #9333ea);
-      border-radius: 50%;
-      position: absolute;
-      left: 6px;
-      top: 6px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
       transition: 0.3s;
     }
 
+    .slider-btn:hover {
+      opacity: 0.9;
+    }
   </style>
 </head>
 <body>
 
-<div class="card">
-  <h2>Complete Payment</h2>
-  <p>Amount: ₹10</p>
+<header class="main-header">
+  <div class="brand">
+    <img src="logo.jpg" class="logo">
+    <span class="brand-name">Sumith E-com</span>
+  </div>
+</header>
 
-  <div class="slider" onclick="pay()">
-    <div class="slider-text">Slide to Pay with UPI</div>
-    <div class="thumb"></div>
+<div class="wrapper">
+  <div class="card">
+    <h2>Complete Payment</h2>
+    <div class="amount">Pay ₹10</div>
+
+    <div class="slider-btn" onclick="pay()">
+      Slide to Pay with UPI
+    </div>
   </div>
 </div>
 
 <script>
 function pay() {
-  window.location.href = "upi://pay?pa=9177916932@fam&pn=MiniStore&am=10&cu=INR";
+  window.location.href = "upi://pay?pa=9177916932@fam&pn=SumithEcom&am=10&cu=INR";
 }
 </script>
 
