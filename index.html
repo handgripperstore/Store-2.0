@@ -1,149 +1,108 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Sumith E-com</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Premium Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<title>Aurevon House</title>
 
-  <link rel="icon" href="logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-    }
+<style>
 
-    .main-header {
-      background: white;
-      padding: 18px 0;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
+body{
+margin:0;
+font-family:Poppins;
+background:#0d0d0d;
+color:white;
+text-align:center;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-    }
+header{
+padding:30px;
+}
 
-    .logo {
-      height: 50px;
-    }
+.logo{
+width:180px;
+}
 
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      letter-spacing: 1px;
-      color: #111827;
-    }
+.hero{
+padding:80px 20px;
+}
 
-    .container {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 80px 20px;
-      flex-wrap: wrap;
-    }
+.hero img{
+width:260px;
+border-radius:12px;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
 
-    .card {
-      background: white;
-      width: 320px;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-    }
+.price{
+font-size:22px;
+margin:20px 0;
+color:#d4af37;
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-    }
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+background:#d4af37;
+color:black;
+font-weight:600;
+cursor:pointer;
+margin:10px;
+}
 
-    .card img {
-      width: 100%;
-      height: 230px;
-      object-fit: contain;
-    }
+button:hover{
+opacity:0.9;
+}
 
-    h3 {
-      margin: 15px 0 5px;
-      font-weight: 600;
-      font-size: 18px;
-    }
+footer{
+margin-top:80px;
+color:#888;
+font-size:14px;
+}
 
-    .price {
-      margin: 10px 0 20px;
-      font-size: 17px;
-    }
+</style>
 
-    .strike {
-      text-decoration: line-through;
-      color: #999;
-      margin-right: 8px;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #6d28d9, #9333ea);
-      color: white;
-      font-weight: 600;
-      font-size: 15px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-  </style>
 </head>
+
 <body>
 
-<header class="main-header">
-  <div class="brand">
-    <img src="logo.jpg" class="logo">
-    <span class="brand-name">Sumith E-com</span>
-  </div>
+<header>
+
+<img src="aurevon_house.jpg" class="logo">
+
 </header>
 
-<div class="container">
+<div class="hero">
 
-  <div class="card">
-    <img src="handgripper.jpg">
-    <h3>Hand Gripper</h3>
-    <div class="price">
-      <span class="strike">₹499</span>
-      <strong>₹10</strong>
-    </div>
-    <button onclick="buy('Hand Gripper')">Buy Now</button>
-  </div>
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
 
-  <div class="card">
-    <img src="pen.jpg">
-    <h3>Premium Pen</h3>
-    <div class="price">
-      <span class="strike">₹50</span>
-      <strong>₹10</strong>
-    </div>
-    <button onclick="buy('Premium Pen')">Buy Now</button>
-  </div>
+<h1>Luxury Minimal Watch</h1>
+
+<p>Crafted for elegance and everyday sophistication.</p>
+
+<div class="price">₹10</div>
+
+<a href="/checkout.html">
+<button>Buy Now</button>
+</a>
+
+<a href="/track.html">
+<button>Track Order</button>
+</a>
 
 </div>
 
-<script>
-function buy(product) {
-  localStorage.setItem("product", product);
-  window.location.href = "details.html";
-}
-</script>
+<footer>
+
+Aurevon House © 2026
+
+</footer>
 
 </body>
 </html>
+
 
 
 
