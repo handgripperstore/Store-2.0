@@ -2,18 +2,88 @@
 <html>
 
 <head>
+
 <title>Order Confirmed</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f5f5;
+text-align:center;
+padding:60px;
+}
+
+.container{
+background:white;
+padding:40px;
+max-width:500px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+color:#2ecc71;
+}
+
+.order-code{
+font-size:22px;
+font-weight:bold;
+margin:20px 0;
+}
+
+button{
+padding:12px 20px;
+margin:10px;
+background:#7b2cff;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#5f21cc;
+}
+
+</style>
+
 </head>
 
 <body>
+
+<div class="container">
 
 <h1>Payment Confirmed</h1>
 
 <p>Your order has been successfully placed.</p>
 
+<p>Your Order Code</p>
+
+<div class="order-code" id="order_code_display"></div>
+
+<p>Please save this code to track your order later.</p>
+
+<button onclick="trackOrder()">Track Order</button>
+
 <button onclick="goHome()">Return to Home</button>
 
+</div>
+
 <script>
+
+const order_code = localStorage.getItem("order_code")
+
+if(order_code){
+document.getElementById("order_code_display").innerText = order_code
+}else{
+document.getElementById("order_code_display").innerText = "Not Available"
+}
+
+function trackOrder(){
+window.location.href="/track.html"
+}
 
 function goHome(){
 window.location.href="/"
