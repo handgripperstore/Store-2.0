@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Track Order</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f5f5f5;
+text-align:center;
+padding:60px;
+}
+
+.container{
+background:white;
+padding:40px;
+max-width:500px;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:80%;
+padding:12px;
+margin:15px 0;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+padding:12px 20px;
+background:#7b2cff;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#5f21cc;
+}
+
+.status{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Track Your Order</h2>
+
+<p>Enter your order code to check the status.</p>
+
+<input id="order_code" placeholder="Enter Order Code">
+
+<br>
+
+<button onclick="trackOrder()">Track Order</button>
+
+<div class="status" id="result"></div>
+
+</div>
+
+<script>
+
+async function trackOrder(){
+
+const code=document.getElementById("order_code").value
+
+if(!code){
+alert("Please enter your order code")
+return
+}
+
+const res=await fetch("/api/checkStatus?order_code="+code)
+
+const data=await res.json()
+
+let message=""
+
+if(data.status==="pending"){
+message="Your payment is still being verified."
+}
+
+else if(data.status==="approved"){
+message="Your order has been confirmed."
+}
+
+else if(data.status==="rejected"){
+message="Payment not detected. Please complete the payment."
+}
+
+else{
+message="Order not found."
+}
+
+document.getElementById("result").innerText=message
+
+}
+
+</script>
+
+</body>
+
+</html>
