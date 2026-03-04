@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Payment Not Detected</title>
+
+<style>
+
+body{
+background:#0d0d0d;
+color:white;
+font-family:Poppins;
+text-align:center;
+padding:80px;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+background:#d4af37;
+color:black;
+font-weight:600;
+cursor:pointer;
+margin:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Payment Not Detected</h1>
+
+<p>We couldn't verify your payment.</p>
+
+<p>If you haven't completed the payment, please do so.</p>
+
+<button onclick="retry()">Complete Payment</button>
+
+<button onclick="cancel()">Cancel Order</button>
+
+<script>
+
+function retry(){
+window.location.href="/checkout.html"
+}
+
+function cancel(){
+window.location.href="/"
+}
+
+</script>
+
+</body>
+</html>
