@@ -7,7 +7,7 @@ const supabase = createClient(
 
 export default async function handler(req, res) {
 
-  const { order } = req.query
+  const { order_code } = req.query
 
   if (!order) {
     return res.status(400).json({ error: "Order missing" })
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   const { data, error } = await supabase
     .from('orders')
     .select('status')
-    .eq('order_code', order)
+    .eq('order_code', order_code)
     .single()
 
   if (error) {
